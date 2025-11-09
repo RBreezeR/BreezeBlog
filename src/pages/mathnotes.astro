@@ -1,0 +1,41 @@
+---
+import NotesLayout from "../layouts/NotesLayout.astro";
+import NoteLink from "../components/notes/NoteLink.astro";
+const allNotes = Object.values(import.meta.glob('./notes/*.md',{eager: true}));
+const title = "笔记页面";
+---
+
+<NotesLayout>
+
+<div class="card">
+    {allNotes.map((note:any) =>
+        <NoteLink
+            href={note.url}
+            title={note.frontmatter.title}
+            pubdate={note.frontmatter.pubDate}
+        />
+    )}
+</div>
+
+</NotesLayout>
+
+<style>
+
+.card {
+    position: relative;
+    top: 30px;
+    background: rgba(213, 246, 255, 0.5);
+    backdrop-filter: blur(6px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap:0.2rem;
+
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+</style>

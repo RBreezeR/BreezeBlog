@@ -1,0 +1,38 @@
+---
+const { image = "/images/background.jpg", opacity = 0.3 } = Astro.props;
+---
+
+<div
+  class="background"
+  style={`background-image: url('${image}'); --overlay-opacity: ${Number(opacity)};`}
+  aria-hidden="true"
+>
+  <div class="overlay"></div>
+</div>
+
+<style>
+  .background {
+    position: fixed;
+    inset: 0;               /* top/right/bottom/left = 0 */
+    z-index: -1;            /* 放到内容后面 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;   /* 不阻挡点击 */
+    /* 默认使用浅色遮罩（透明度由 --overlay-opacity 控制） */
+    background-color: rgba(255, 255, 255, var(--overlay-opacity));
+    transition: background-color 200ms ease;
+  }
+
+  /* 暗色模式下使用深色遮罩
+  @media (prefers-color-scheme: dark) {
+    .overlay {
+      background-color: rgba(0, 0, 0, var(--overlay-opacity));
+    }
+  } */
+</style>

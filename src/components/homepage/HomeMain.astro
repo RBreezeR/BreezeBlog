@@ -1,0 +1,71 @@
+---
+// HomeMain.astro
+import TagCard from "./TagCard.astro";
+import LeftCard from "./LeftCard.astro";
+import RightCard from "./RightCard.astro";
+---
+
+<section class="home-main">
+  <div class="max-w-5xl mx-auto grid container">
+    <!-- 左侧侧栏 -->
+    <aside class="sidebar">
+        <LeftCard title="当前状态">
+            最近在研究 Krein string 理论。
+        </LeftCard>
+
+        <LeftCard title="关于我">
+            喜欢将抽象结构与视觉美感结合。
+        </LeftCard>
+    
+        <TagCard>
+            未来会添加直达标签页的链接。
+        </TagCard>
+    </aside>
+
+    <!-- 主内容区 -->
+    <aside class="sidebar">
+
+        <RightCard title="置顶" pubdate="2025.11.9">
+          置顶栏
+        </RightCard>
+
+        <RightCard title="最新动态">
+            此处将来会显示在笔记库与画廊中的更新内容。
+        </RightCard>
+
+        <RightCard title="1020">
+            测试
+        </RightCard>
+    </aside>
+    
+  </div>
+</section>
+
+<style>
+.home-main {
+  padding: 5rem 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 350px 1fr; /* ✅ 左窄右宽 */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+}
+
+/* ✅ 响应式布局：在窄屏上上下排列 */
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

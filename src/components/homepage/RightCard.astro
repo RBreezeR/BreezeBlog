@@ -1,0 +1,78 @@
+---
+const { title, image, pubdate } = Astro.props;
+---
+
+<main class="main-content">
+  <div class="card">
+    <!-- ✅ 标题区域 -->
+    {title && (
+      <header class="card-header">
+        <h2 class="card-title">{title}</h2>
+        {pubdate && <time class="card-date">{pubdate}</time>}
+      </header>
+    )}
+
+    <!-- ✅ 主体内容插槽 -->
+    <div class="card-body">
+      <slot />
+    </div>
+  </div>
+</main>
+
+<style>
+.card {
+  background: rgba(213, 246, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ 标题区域样式 */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0.5rem;
+}
+
+.card-title {
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0369a1; /* 蓝色主色调 */
+}
+
+.card-date {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ✅ 暗色模式 */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: rgba(17, 24, 39, 0.8);
+  }
+
+  .card-title {
+    color: #7dd3fc; /* 浅蓝色标题 */
+  }
+
+  .card-date {
+    color: #cbd5e1;
+  }
+
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+</style>

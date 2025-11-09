@@ -1,0 +1,36 @@
+---
+// Card.astro
+import LeftCard from "./LeftCard.astro";
+const { title, content, image } = Astro.props;
+---
+
+<LeftCard title="标签">
+  <slot/>
+  <div class="tags">
+    <span>#数学</span>
+    <span>#艺术</span>
+    <span>#生活</span>
+  </div>
+</LeftCard>
+
+<style>
+
+.tags span {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+/* 暗色模式样式 */
+@media (prefers-color-scheme: dark) {
+  .tags span {
+    background: #1e3a8a;
+    color: #bfdbfe;
+  }
+}
+
+</style>

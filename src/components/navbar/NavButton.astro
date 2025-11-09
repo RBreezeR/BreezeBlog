@@ -1,0 +1,21 @@
+---
+const { href = "#", label = "Button"} = Astro.props;
+---
+
+<a href={href} class="nav-button">{label}</a>
+
+<style>
+    .nav-button {
+        /* background-color: rgba(82, 168, 249, 0); 浅蓝色背景 */
+        /* backdrop-filter: blur(2px); */
+        color: rgb(0, 0, 0);
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+    .nav-button:hover {
+        background-color: rgba(129, 158, 255, 0.4);
+    }
+</style>

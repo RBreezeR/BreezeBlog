@@ -1,0 +1,28 @@
+---
+import NavButton from './NavButton.astro';
+---
+
+<nav class="nav-bar">
+  <NavButton href="/" label="主页"/>
+  <NavButton href="/mathnotes" label="数学笔记" />
+  <NavButton href="/gallery" label="画廊" />
+  <NavButton href="/daily" label="我的日常" />
+</nav>
+
+<style>
+  .nav-bar {
+    display: flex;
+    font-size: large;
+    font-weight: 500;
+    justify-content: center; /* 水平居中 */
+    align-items: center;      /* 垂直居中（如果有高度） */
+    gap: 2rem;                /* 按钮间距 */
+    background-color: rgba(224, 240, 255, 0.4);
+    backdrop-filter: blur(2px);
+    padding: 0.4rem 1rem;     /* 内边距 */
+    border-radius: 12px;       /* 圆角，让整体更柔和 */
+
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>
