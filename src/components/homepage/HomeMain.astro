@@ -9,17 +9,32 @@ import RightCard from "./RightCard.astro";
   <div class="max-w-5xl mx-auto grid container">
     <!-- 左侧侧栏 -->
     <aside class="sidebar">
-        <LeftCard title="当前状态">
-            最近在研究 Krein string 理论。
-        </LeftCard>
 
         <LeftCard title="关于我">
-            喜欢将抽象结构与视觉美感结合。
+            这里是一枚平平无奇的数学爱好者，你可以在这里找到一些我写的数学笔记。（可能目前我还没有上传sadly）
+            非常欢迎通过<a href="mailto:jianan.peng@fmf.uni-lj.si">电子邮件</a>与我交流任何话题。
+        </LeftCard>
+
+        <LeftCard title="当前状态">
+            当前课题：Krein弦的点态扰动理论。<br>
+            讨论班：概率数论、复分析、谱理论。<br>
+            
+        </LeftCard>
+
+        <LeftCard title="我所在的城市">
+            卢布尔雅那（<a href="https://zh.wikipedia.org/wiki/%E5%8D%A2%E5%B8%83%E5%B0%94%E9%9B%85%E9%82%A3">Ljubljana</a>），斯洛文尼亚（sLOVEnia）的首都，一个美丽且充满文化气息的城市。
+            最重要的是，这里有“龙城”的别称，有丰富的龙文化，大爱龙龙！
         </LeftCard>
     
-        <TagCard>
+        <LeftCard title="我呆过的城市">
+            我在深圳的<a href="https://sustech.edu.cn/">南方科技大学</a>度过了六年的快乐时光。（偶尔也不那么快乐）
+            也许你没有听说过这个大学，她才十多岁呢！
+            这里有一群充满活力的理想主义者，欢迎来看看！
+        </LeftCard>
+
+        <!-- <TagCard>
             未来会添加直达标签页的链接。
-        </TagCard>
+        </TagCard> -->
     </aside>
 
     <!-- 主内容区 -->
@@ -29,8 +44,15 @@ import RightCard from "./RightCard.astro";
           置顶栏
         </RightCard>
 
-        <RightCard title="最新动态">
-            此处将来会显示在笔记库与画廊中的更新内容。
+        <RightCard title="第一篇随笔" pubdate="2025.11.24">
+            今日在B站看到一个视频，一位语文老师在为学生讲解如何及为什么写随笔。
+            “而时间一定会奖励那些热爱记录的人。”
+            我也曾数次尝试过写日记，但最后都草草放弃。
+            也许趁着搭建个人主页的档子重新开始是一个不错的选择，毕竟现在的生活中还是不时有些值得写两笔的事。
+            视频中还分享了一些同学们的随笔，还颇有些感触。
+            一方面是能体会到，很多人和当年的自己一样，对作为学习任务的随笔充满了不理解和抵触，
+            另一方面是，那文笔中的稚嫩与青涩会勾起对青春的怀念。
+            在心中暗笑这些随笔单纯、贫乏之余，大抵自己是再也写不出这般无畏的文字了吧。
         </RightCard>
 
         <RightCard title="1020">
